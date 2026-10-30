@@ -26,6 +26,10 @@ def obtener_html(url):
     options.add_argument("--disable-gpu")
     options.add_argument("--single-process")
     options.add_argument("--window-size=1920,1080")
+    options.add_argument("--user-data-dir=/tmp/chrome-user-data")
+    options.add_argument("--data-path=/tmp/chrome-data")
+    options.add_argument("--disk-cache-dir=/tmp/chrome-cache")
+    options.add_argument("--remote-debugging-port=9222")
 
     service = Service("/opt/chromedriver")  # ruta segun tu imagen Docker
     driver = webdriver.Chrome(service=service, options=options)

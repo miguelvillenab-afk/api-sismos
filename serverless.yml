@@ -6,7 +6,7 @@ provider:
   runtime: python3.12
   # Default memory size for functions (default: 1024MB)
   memorySize: 2048
-  timeout: 30
+  timeout: 90
   iam:
     role: arn:aws:iam::777000342473:role/LabRole
   ecr:
@@ -16,17 +16,14 @@ provider:
 
 functions:
   scrape_table:
-    handler: scrap_table.lambda_handler  # Asegúrarse de que el nombre del archivo y la función coincidan
-    package:
-      include:
-        - ./**  # Incluir todo el contenido del directorio
+    image:
+      name: scraper
     events:
       - http:
           path: /scrape/table
           method: get
           cors: true
           integration: lambda
-
 resources:
   Resources:
     TablaWebScrapping:
