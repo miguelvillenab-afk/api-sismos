@@ -5,7 +5,7 @@ provider:
   name: aws
   runtime: python3.12
   # Default memory size for functions (default: 1024MB)
-  memorySize: 1024
+  memorySize: 2048
   timeout: 30
   iam:
     role: arn:aws:iam::777000342473:role/LabRole
