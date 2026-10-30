@@ -9,10 +9,6 @@ provider:
   timeout: 30
   iam:
     role: arn:aws:iam::777000342473:role/LabRole
-  ecr:
-    images:
-      scraper:
-        path: ./
 
 functions:
   scrape_table:
